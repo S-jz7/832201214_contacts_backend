@@ -1,17 +1,17 @@
 # The backend code refers to the Alibaba JavaScript Style Guide.
 ### Modular Structure
-The code follows a modular structure by separating routes (`contacts.js`), controllers (`contactsController.js`), and database configuration (`db.js`) into distinct modules. This modular design enhances code readability and maintainability, aligning well with the principle of “separation of concerns.”
+The backend code is organized into separate modules, such as routes (contacts.js), controllers (contactsController.js), and database configuration (db.js). This modular architecture improves code readability and simplifies maintenance, as it follows the "separation of concerns" principle.
 ### RESTful API Design
-The backend adheres to RESTful API design principles, using different HTTP methods (GET, POST, PUT, DELETE) to perform CRUD operations. This makes the API interface more intuitive, standardized, and easy for the frontend to consume.
+The backend implements RESTful API design principles by using appropriate HTTP methods (GET, POST, PUT, DELETE) to handle CRUD operations. This results in a standardized and intuitive API interface, making it easier for the frontend to consume and interact with the backend.
 ### Use of Express Framework
-Express is used as the framework in Node.js to handle server operations, leveraging middleware, routing management, and request handling features. This approach simplifies server setup and request processing.
+Express.js is utilized as the core framework for the backend server, providing middleware, routing, and request handling capabilities. This use of Express simplifies the setup of server functionality and ensures efficient processing of incoming requests.
 ### Database Interaction
-The code uses the `mysql2` library to interact directly with MySQL, employing raw SQL queries. This approach is straightforward and efficient, and with parameterized queries, it helps prevent SQL injection, enhancing security.
+The code uses the mysql2 library for direct interaction with a MySQL database, utilizing raw SQL queries. This straightforward approach ensures efficiency, and the use of parameterized queries effectively mitigates SQL injection vulnerabilities, thereby enhancing security.
 ### Error Handling and Data Validation
-In the controllers, errors in database operations are caught, and the appropriate HTTP status codes are returned. Additionally, basic validation is performed for key data (such as `name` and `phone`), ensuring data integrity and reliability.
+Error handling within the controllers ensures that any issues during database interactions are appropriately caught and resolved, with relevant HTTP status codes returned. Basic validation for critical data fields, such as name and phone, is performed to maintain data consistency and accuracy.
 ### JSDoc-Style Comments
-Detailed JSDoc-style comments are included throughout the code to describe the functions, parameters, and return values. This improves readability and aids in understanding and maintaining the code effectively.
+The code includes detailed JSDoc-style comments to describe the purpose, parameters, and return values of functions. This level of documentation improves overall code comprehension and simplifies future maintenance.
 ### Security Focus
-Parameterized queries (e.g., `db.query(query, [params], callback)`) are implemented when querying the database to help prevent SQL injection attacks, enhancing the application’s security.
+Security is a priority in the backend implementation, with parameterized SQL queries (db.query(query, [params], callback)) employed to prevent SQL injection attacks. This approach significantly enhances the application's defense against common security vulnerabilities.
 ### Effective Middleware Usage
-In the server configuration, `cors` middleware handles cross-origin requests, and `express.json()` parses JSON request bodies. This approach reflects well-managed request handling.
+In the server setup, middleware is effectively utilized for various purposes. The cors middleware is used to manage cross-origin requests, allowing secure interactions between the frontend and backend. Additionally, express.json() middleware is employed for parsing incoming JSON data, resulting in effective request management.
